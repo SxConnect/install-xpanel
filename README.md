@@ -89,21 +89,39 @@ XPanel é um **painel de controle moderno e completo** para gerenciamento de ser
 - **CPU**: 1 core (recomendado 2+ cores)
 - **Disco**: 10GB livre (recomendado 20GB+)
 - **Acesso**: Root via SSH
+- **Docker**: Será instalado automaticamente
 
 ### Instalação com Um Comando
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/sxconnect/install-xpanel/main/install-docker.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/SxConnect/install-xpanel/main/install-docker.sh | sudo bash
 ```
 
-**Pronto!** O XPanel estará instalado e rodando em ~10 minutos.
+**Pronto!** O XPanel estará instalado e rodando em ~5 minutos.
+
+### Instalação Manual
+
+Se preferir instalar manualmente:
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/SxConnect/install-xpanel.git
+cd install-xpanel
+
+# 2. Configure as variáveis (opcional)
+cp .env.example .env
+nano .env
+
+# 3. Execute o instalador
+sudo bash install-docker.sh
+```
 
 ### Acesso Inicial
 
 ```
 URL: http://SEU_IP_DO_SERVIDOR
 
-Credenciais:
+Credenciais padrão:
   Email: admin@xpanel.local
   Senha: admin123
 ```
@@ -116,13 +134,13 @@ Credenciais:
 
 O instalador configura automaticamente:
 
-- ✅ Docker e Docker Compose
+- ✅ Docker e Docker Compose (se não estiver instalado)
 - ✅ PostgreSQL 15 (containerizado)
-- ✅ XPanel Backend (API REST)
-- ✅ XPanel Frontend (React SPA)
-- ✅ Nginx (reverse proxy)
-- ✅ Firewall (UFW)
-- ✅ Certificados SSL (opcional)
+- ✅ XPanel Backend - `ghcr.io/sxconnect/xpanel-backend:latest`
+- ✅ XPanel Frontend - `ghcr.io/sxconnect/xpanel-frontend:latest`
+- ✅ Configuração de rede Docker
+- ✅ Volumes persistentes para dados
+- ✅ Health checks automáticos
 
 **Tudo isolado em containers Docker!** Sem poluir seu sistema.
 
