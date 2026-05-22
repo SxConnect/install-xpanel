@@ -82,20 +82,82 @@ XPanel é um **painel de controle moderno e completo** para gerenciamento de ser
 
 ## 🚀 Instalação Rápida
 
-### Requisitos Mínimos
+### 🌍 Suporte Multi-Plataforma
 
+O XPanel funciona em **3 sistemas operacionais**:
+
+- ✅ **Linux** (Ubuntu/Debian) - Produção
+- ✅ **macOS** (10.15+) - Desenvolvimento
+- ✅ **Windows** (10/11) - Desenvolvimento
+
+### ⭐ Instalação Universal (Um comando para todos!)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/SxConnect/install-xpanel/main/install.sh | bash
+```
+
+**O instalador detecta automaticamente seu sistema operacional!**
+
+### Requisitos por Sistema
+
+#### 🐧 Linux (Produção)
 - **OS**: Ubuntu 20.04+ ou Debian 11+
-- **RAM**: 1GB (recomendado 2GB+)
+- **RAM**: 2GB (recomendado 4GB+)
 - **CPU**: 1 core (recomendado 2+ cores)
 - **Disco**: 10GB livre (recomendado 20GB+)
 - **Acesso**: Root via SSH
-- **Docker**: Será instalado automaticamente
+- **Docker**: Instalado automaticamente
 
-### Instalação com Um Comando
+#### 🍎 macOS (Desenvolvimento)
+- **OS**: macOS 10.15+ (Intel ou Apple Silicon)
+- **RAM**: 8GB (recomendado 16GB+)
+- **CPU**: 2 cores (recomendado 4+ cores)
+- **Disco**: 20GB livre (recomendado 50GB+)
+- **Docker Desktop**: Instalado automaticamente via Homebrew
+
+#### 🪟 Windows (Desenvolvimento)
+- **OS**: Windows 10/11 (64-bit)
+- **RAM**: 8GB (recomendado 16GB+)
+- **CPU**: 2 cores (recomendado 4+ cores)
+- **Disco**: 20GB livre (recomendado 50GB+)
+- **Docker Desktop**: Obrigatório (link fornecido pelo instalador)
+
+### Instalação por Sistema
+
+#### 🐧 Linux
 
 ```bash
+# Instalação automática (recomendado)
+curl -fsSL https://raw.githubusercontent.com/SxConnect/install-xpanel/main/install.sh | sudo bash
+
+# Ou instalação Docker específica
 curl -fsSL https://raw.githubusercontent.com/SxConnect/install-xpanel/main/install-docker.sh | sudo bash
 ```
+
+**Acesso:** `http://SEU_IP`
+
+#### 🍎 macOS
+
+```bash
+# Instalação automática
+curl -fsSL https://raw.githubusercontent.com/SxConnect/install-xpanel/main/install.sh | bash
+```
+
+**Acesso:** `http://localhost:3000`
+
+#### 🪟 Windows
+
+**Opção 1: Arquivo .bat (Recomendado)**
+1. Baixe: [install-windows.bat](https://raw.githubusercontent.com/SxConnect/install-xpanel/main/install-windows.bat)
+2. Clique com botão direito → **Executar como Administrador**
+
+**Opção 2: PowerShell Direto**
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force
+irm https://raw.githubusercontent.com/SxConnect/install-xpanel/main/install-windows.ps1 | iex
+```
+
+**Acesso:** `http://localhost:3000`
 
 **Pronto!** O XPanel estará instalado e rodando em ~5 minutos.
 
@@ -118,8 +180,18 @@ sudo bash install-docker.sh
 
 ### Acesso Inicial
 
+#### Linux
 ```
 URL: http://SEU_IP_DO_SERVIDOR
+
+Credenciais padrão:
+  Email: admin@xpanel.local
+  Senha: admin123
+```
+
+#### macOS / Windows
+```
+URL: http://localhost:3000
 
 Credenciais padrão:
   Email: admin@xpanel.local
@@ -143,6 +215,31 @@ O instalador configura automaticamente:
 - ✅ Health checks automáticos
 
 **Tudo isolado em containers Docker!** Sem poluir seu sistema.
+
+---
+
+## 🌍 Suporte Multi-Plataforma
+
+### Sistemas Suportados
+
+| Sistema | Versões | Uso | Porta | Status |
+|---------|---------|-----|-------|--------|
+| **Linux** | Ubuntu 20.04+, Debian 11+ | Produção | 80 | ✅ Testado |
+| **macOS** | 10.15+ (Intel e Apple Silicon) | Desenvolvimento | 3000 | ✅ Testado |
+| **Windows** | 10/11 (64-bit) | Desenvolvimento | 3000 | ✅ Testado |
+
+### Detecção Automática
+
+O instalador universal (`install.sh`) detecta automaticamente:
+- ✅ Sistema operacional (Linux, macOS, Windows)
+- ✅ Distribuição Linux (Ubuntu, Debian)
+- ✅ Arquitetura (x86_64, ARM64/Apple Silicon)
+- ✅ Dependências necessárias
+
+### Documentação Completa
+
+- 📖 [Guia de Instalação Rápida](QUICK-INSTALL.md)
+- 🌍 [Suporte Multi-Plataforma Detalhado](MULTI-PLATFORM-SUPPORT.md)
 
 ---
 
